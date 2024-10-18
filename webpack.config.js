@@ -22,4 +22,5 @@ module.exports = {
   },
   plugins: [new CleanWebpackPlugin()],
   mode: "development",
+  watch: true,
 };
