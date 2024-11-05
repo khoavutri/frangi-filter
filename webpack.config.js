@@ -36,6 +36,16 @@ module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: "./index.html",
+      filename: "index.html",
+    }),
+    new webpack.BannerPlugin({
+      banner: "The product is owned by Vu Tri Khoa",
+    }),
+  ],
   optimization: {
     minimize: isProduction,
     minimizer: [
@@ -49,16 +59,6 @@ module.exports = {
       }),
     ],
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: "./index.html",
-      filename: "index.html",
-    }),
-    new webpack.BannerPlugin({
-      banner: "The product is owned by Vu Tri Khoa",
-    }),
-  ],
   mode: isProduction ? "production" : "development",
-  watch: true,
+  watch: false,
 };

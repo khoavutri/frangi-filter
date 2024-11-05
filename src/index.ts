@@ -6,5 +6,8 @@ if (canvas) {
 }
 
 canvas.addEventListener("click", () => {
-  canvas.style.background = "red";
+  if (canvas.style.backgroundColor === "red")
+    canvas.style.backgroundColor = "blue";
+  else canvas.style.backgroundColor = "red";
 });
+console.log("khopa");
