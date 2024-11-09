@@ -5,14 +5,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clear": "del /s /q dist || rm -rf dist",
-    "build:dev": "npm run clear && webpack --mode=development",
-    "build": "npm run clear && set NODE_ENV=production&& webpack --mode=production",
+    "clear:html": "del /s /q dist\\*.html || rm -f dist/*.html",
+    "build:dev": "npm run clear && set NODE_ENV=development&& webpack --mode=development && npm run clear:html",
+    "build": "npm run clear && set NODE_ENV=production&& webpack --mode=production && npm run clear:html",
     "start": "webpack serve"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/requirejs": "^2.1.37",
     "clean-webpack-plugin": "^4.0.0",
     "cross-env": "^7.0.3",
     "html-webpack-plugin": "^5.6.3",

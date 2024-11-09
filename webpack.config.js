@@ -4,17 +4,20 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const isProduction = process.env.NODE_ENV === "production";
+const isProduction = process.env.NODE_ENV.trim() == "production";
 
 module.exports = {
-  entry: "./src/index.ts",
+  entry: {
+    khoadev: "./src/index.ts",
+  },
   output: {
-    filename: "bundle.js",
+    library: "khoadev",
+    filename: isProduction ? "[name].min.js" : "[name].js",
     path: path.resolve(__dirname, "dist"),
     publicPath: "/",
-    library: "khoadev",
     libraryTarget: "umd",
     clean: isProduction,
+    devtoolModuleFilenameTemplate: "[absolute-resource-path]",
   },
   devServer: {
     static: {
