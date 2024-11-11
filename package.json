@@ -6,8 +6,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clear": "del /s /q dist || rm -rf dist",
     "clear:html": "del /s /q dist\\*.html || rm -f dist/*.html",
-    "build:dev": "npm run clear && set NODE_ENV=development&& webpack --mode=development && npm run clear:html",
-    "build": "npm run clear && set NODE_ENV=production&& webpack --mode=production && npm run clear:html",
+    "build:dev": "npm run clear && set NODE_ENV=development&& webpack --mode=development&& npm run clear:html",
+    "build:all": "npm run clear && webpack && npm run clear:html",
+    "build": "npm run clear && set NODE_ENV=production&& webpack --mode=production&& npm run clear:html",
     "start": "webpack serve"
   },
   "author": "",
