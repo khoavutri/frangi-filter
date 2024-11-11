@@ -15,7 +15,7 @@ const baseConfig = (isProduction) => {
       path: path.resolve(__dirname, "dist"),
       publicPath: "/",
       libraryTarget: "umd",
-      clean: isProduction,
+      clean: true,
       devtoolModuleFilenameTemplate: "[absolute-resource-path]",
     },
     module: {
