@@ -5,6 +5,7 @@ const KhoaTools = {
   test1: Test,
   test2: Test2,
 };
+
 if (typeof module !== "undefined" && module.exports) {
   module.exports = { KhoaTools };
 } else if (typeof define === "function" && define.amd) {

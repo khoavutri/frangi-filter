@@ -62,6 +62,7 @@ module.exports = {
       }),
     ],
   },
+  devtool: "source-map",
   mode: isProduction ? "production" : "development",
   watch: false,
 };
