@@ -21,9 +21,17 @@ const baseConfig = (isProduction) => {
     module: {
       rules: [
         {
-          test: /\.tsx?$/,
-          use: "ts-loader",
-          exclude: /node_modules/,
+          test: /\.(ts|tsx)$/i,
+          loader: "ts-loader",
+          exclude: ["/node_modules/"],
+        },
+        {
+          test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+          type: "asset",
+        },
+        {
+          test: /\.glsl$/,
+          loader: "webpack-glsl-loader",
         },
       ],
     },

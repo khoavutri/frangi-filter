@@ -6,6 +6,8 @@ const KhoaTools = {
   test2: Test2,
 };
 
+console.log("The product is owned by Vu Tri Khoa");
+
 if (typeof module !== "undefined" && module.exports) {
   module.exports = { KhoaTools };
 } else if (typeof define === "function" && define.amd) {
