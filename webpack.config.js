@@ -5,7 +5,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const baseConfig = (isProduction) => {
-  return {
+  const config = {
     entry: {
       khoadev: "./src/index.ts",
     },
@@ -17,14 +17,6 @@ const baseConfig = (isProduction) => {
       libraryTarget: "umd",
       clean: isProduction,
       devtoolModuleFilenameTemplate: "[absolute-resource-path]",
-    },
-    devServer: {
-      static: {
-        directory: path.join(__dirname, "dist"),
-      },
-      open: true,
-      host: "0.0.0.0",
-      port: 8080,
     },
     module: {
       rules: [
@@ -65,17 +57,29 @@ const baseConfig = (isProduction) => {
     mode: isProduction ? "production" : "development",
     watch: false,
   };
+
+  if (!isProduction) {
+    config.devServer = {
+      static: {
+        directory: path.join(__dirname, "dist"),
+      },
+      open: true,
+      host: "0.0.0.0",
+      port: 8080,
+    };
+  }
+
+  return config;
 };
 
 module.exports = (() => {
   const env = process.env.NODE_ENV ? process.env.NODE_ENV.trim() : "";
-  console.log(process.env.NODE_ENV);
   switch (env) {
     case "production":
       return baseConfig(true);
     case "development":
       return baseConfig(false);
     default:
-      return [baseConfig(true), baseConfig(false)];
+      return [baseConfig(false), baseConfig(true)];
   }
 })();
