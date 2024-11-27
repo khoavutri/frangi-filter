@@ -5,10 +5,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clear": "del /s /q dist || rm -rf dist",
+    "clear:public": "del /s /q dist\\public && rmdir /s /q dist\\public",
     "clear:html": "del /s /q dist\\*.html || rm -f dist/*.html",
-    "build:dev": "npm run clear && cross-env NODE_ENV=development webpack --mode=development && npm run clear:html",
-    "build": "npm run clear && cross-env NODE_ENV=production webpack --mode=production && npm run clear:html",
-    "build:all": "npm run clear && webpack && npm run clear:html",
+    "build:dev": "npm run clear && cross-env NODE_ENV=development webpack --mode=development && npm run clear:html && npm run clear:public",
+    "build:prod": "npm run clear && cross-env NODE_ENV=production webpack --mode=production && npm run clear:html && npm run clear:public",
+    "build": "npm run clear && webpack",
     "start": "webpack serve"
   },
   "author": "",
@@ -17,6 +18,7 @@
   "devDependencies": {
     "@types/requirejs": "^2.1.37",
     "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^12.0.2",
     "cross-env": "^7.0.3",
     "html-webpack-plugin": "^5.6.3",
     "terser-webpack-plugin": "^5.3.10",

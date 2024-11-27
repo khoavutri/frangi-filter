@@ -3,6 +3,7 @@ const webpack = require("webpack");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const baseConfig = (isProduction) => {
   const config = {
@@ -58,6 +59,9 @@ const baseConfig = (isProduction) => {
             },
           },
           extractComments: false,
+        }),
+        new CopyPlugin({
+          patterns: [{ from: "public", to: "public" }],
         }),
       ],
     },
