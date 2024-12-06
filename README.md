@@ -1,6 +1,6 @@
 # 🚀 Frangi filter
 
-🌐 Demo Links(https://khoavutri.github.io/skeletonization-dijkstra)
+🌐 [Demo Links](https://khoavutri.github.io/frangi-filter/)(https://khoavutri.github.io/frangi-filter/)
 
 📦 **Owned by:** [Vu Tri Khoa](https://github.com/khoavutri)(https://gitlab.com/khoavip07)
 
@@ -16,7 +16,7 @@
 
 ```bash
 # Clone the repository
-git clone https://gitlab.com/khoavip07/webpack-base.git
+git clone https://github.com/khoavutri/skeletonization-dijkstra.git
 
 # Install dependencies
 npm install
