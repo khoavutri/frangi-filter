@@ -21,6 +21,15 @@ npm install
 
 # Start the application
 npm start
+
+# Build the library in the production environment
+npm run build:prod
+
+# Build the library in the development environment
+npm run build:dev
+
+# Build the application
+npm run build
 ```
 
 ## 📞 Support
