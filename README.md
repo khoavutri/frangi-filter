@@ -1,4 +1,4 @@
-# 🚀 My Amazing Product
+# 🚀 webpack-base
 
 📦 **Owned by:** [Vu Tri Khoa](https://github.com/khoavutri)(https://gitlab.com/khoavip07)
 
